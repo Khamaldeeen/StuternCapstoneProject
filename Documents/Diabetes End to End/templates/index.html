@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- rendering to device width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title> Diapred </title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+  <body >
+      <div class="container-fluid" style="text-align: center;">
+    <div class="container pt-3">
+    <h1> Diabetes Prediction App</h1>
+    <p> Select the features that is perculiar to you </p>
+  </div>
+  </div>
+<form action="{{ url_for('predict')}}" method="post">
+<div class="container-fluid">
+  <div class="container pt-3">  
+  <div class="row">
+        <div class="col-sm-4">
+        <br>
+        <div class="input-group mb-3 input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Gender</span>
+          </div>
+            <select name="genders" class="custom-select">
+              <option selected>Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+        </div>
+          <br>
+          <div class="input-group mb-3 input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Polyuria</span>
+          </div>
+            <select name="polyuria" class="custom-select">
+              <option selected>Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+        </div>
+        <br>
+        <div class="input-group mb-3 input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Polydipsia</span>
+          </div>
+            <select name="polydipsia" class="custom-select">
+              <option selected>Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+        </div>
+        <br>
+        <div class="input-group mb-3 input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Sudden Weakness</span>
+          </div>
+            <select name="s-weakness" class="custom-select">
+              <option selected>Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+        </div>
+        <br>
+        <div class="input-group mb-3 input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Weakness</span>
+          </div>
+            <select name="weakness" class="custom-select">
+              <option selected>Select</option>
+              <option value="male">Yes</option>
+              <option value="female">No</option>
+            </select>
+        </div>
+          
+          </div>
+          <div class="col-sm-4">
+            <br>
+        <div class="input-group mb-3 input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Polyphagia</span>
+          </div>
+            <select name="polyphagia" class="custom-select">
+              <option selected>Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+        </div>
+          <br>
+          <div class="input-group mb-3 input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Genital trush</span>
+          </div>
+            <select name="genital" class="custom-select">
+              <option selected>Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+        </div>
+        <br>
+        <div class="input-group mb-3 input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Visual Blurring</span>
+          </div>
+            <select name="visual" class="custom-select">
+              <option selected>Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+        </div>
+        <br>
+        <div class="input-group mb-3 input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Itching</span>
+          </div>
+            <select name="itching" class="custom-select">
+              <option selected>Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+        </div>
+        <br>
+        <div class="input-group mb-3 input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Irritability</span>
+          </div>
+            <select name="irritab" class="custom-select">
+              <option selected>Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+        </div>
+            
+          </div>
+          <div class="col-sm-4">
+            <br>
+        <div class="input-group mb-3 input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Delayed healing</span>
+          </div>
+            <select name="d-healing" class="custom-select">
+              <option selected>Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+        </div>
+          <br>
+          <div class="input-group mb-3 input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Partial paresis</span>
+          </div>
+            <select name="paresis" class="custom-select">
+              <option selected>Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+        </div>
+        <br>
+        <div class="input-group mb-3 input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Stiff muscle</span>
+          </div>
+            <select name="s-muscle" class="custom-select">
+              <option selected>Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+        </div>
+        <br>
+        <div class="input-group mb-3 input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Alopecia</span>
+          </div>
+            <select name="alopecia" class="custom-select">
+              <option selected>Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+        </div>
+        <br>
+        <div class="input-group mb-3 input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Obesity</span>
+          </div>
+            <select name="obesity" class="custom-select">
+              <option selected>Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+        </div>
+          </div>
+         </div>
+  </div>
+</div>
+<div class="container-fluid">
+    <div class="container pt-3">
+      <button type="submit" class="btn btn-primary">Predict</button>
+  </div>
+  </div>
+  <div class="container-fluid">
+    <div class="container pt-3">
+      <h3> {{ prediction }} </h3>
+  </div>
+  </div>
+</form>
+    <script src="script.js"></script>
+  </body>
+</html>
